@@ -6,7 +6,7 @@ import {nanoid} from "nanoid";
 function App() {
   const rollDiceFunc = ()=> Math.floor(6*Math.random());
   const initialDiceArray =Array.from({ length: 10 },rollDiceFunc);
-  const initialState = initialDiceArray.map(  element=>(  {"value" : element, "isHeld" : false, id:nanoid()} ) );
+  const initialState = initialDiceArray.map(  element=>(  {value : element, isHeld : false, id : nanoid()} ) );
   const [dice,setDice] = React.useState(initialState);
   
   //create the tags to render the dices
@@ -17,7 +17,7 @@ function App() {
   //used ternary to return in a single line. 
   //Because we use .map this function will be applied to each of the elements of the array individually
   //and each element is an object, therefore we need to open it up and then overwirte the value of it
-  const changeValuesFunc = element=> !element.isHeld ? { ...element, "value": rollDiceFunc()} : element;
+  const changeValuesFunc = element=> !element.isHeld ? { ...element, value: rollDiceFunc()} : element;
 
   return (
     <main className="App">
