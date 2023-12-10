@@ -1,6 +1,7 @@
 import Die from "./assets/components/Die";
 import React, { useEffect } from "react";
 import {nanoid} from "nanoid";
+import Confetti from 'react-confetti';
 
 
 function App() {
@@ -41,7 +42,9 @@ function App() {
       <div  className='dices-container'>
         {diceArraysTags}
       </div>
-      <button className="rolldice_button" onClick={()=>setDice(prevArray=>prevArray.map(changeValuesFunc))}>Roll</button>
+      <button className="rolldice_button" onClick={()=>setDice(prevArray=>prevArray.map(changeValuesFunc))}>{
+        tenzies ? "Restart" : "Roll"
+        }</button>
     </main>
   );
 }
