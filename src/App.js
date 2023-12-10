@@ -1,5 +1,5 @@
 import Die from "./assets/components/Die";
-import React from "react";
+import React, { useEffect } from "react";
 import {nanoid} from "nanoid";
 
 
@@ -9,6 +9,17 @@ function App() {
   const initialState = initialDiceArray.map(  element=>(  {value : element, isHeld : false, id : nanoid()} ) );
   const [dice,setDice] = React.useState(initialState);
   
+  //we will create a state to keep track if the use won or not:
+  const [tenzies, setTenzies]=React.useState(false);
+  //we only wanted to run if we update our array of dices somehow 
+  React.useEffect(()=>{
+    const newArrayTrueisHeld = dice.filter(element=>element.isHeld);
+    const firstValue = dice[0].value;
+    const sameValuesArray = dice.filter(element=> element.value ===firstValue)
+    if (sameValuesArray.length===10 && newArrayTrueisHeld.length===sameValuesArray.length) { setTenzies(true)};
+    
+  },[dice])
+
   //create the tags to render the dices
   const diceArraysTags = dice.map(oneDice=><Die value={oneDice.value} key={oneDice.id} isHeld={oneDice.isHeld}
     holdDice={()=>holdDice(oneDice.id)} />);
