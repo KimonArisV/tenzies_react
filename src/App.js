@@ -6,11 +6,12 @@ import {nanoid} from "nanoid";
 function App() {
   const rollDiceFunc = ()=> Math.floor(6*Math.random());
   const initialDiceArray =Array.from({ length: 10 },rollDiceFunc);
-  const initialState = initialDiceArray.map(  element=>(  {value : element, isHeld : true, id : nanoid()} ) );
+  const initialState = initialDiceArray.map(  element=>(  {value : element, isHeld : false, id : nanoid()} ) );
   const [dice,setDice] = React.useState(initialState);
   
   //create the tags to render the dices
-  const diceArraysTags = dice.map(oneDice=><Die value={oneDice.value} key={oneDice.id} isHeld={oneDice.isHeld} />);
+  const diceArraysTags = dice.map(oneDice=><Die value={oneDice.value} key={oneDice.id} isHeld={oneDice.isHeld}
+    holdDice={()=>holdDice(oneDice.id)} />);
 
   //console.log(rollDiceFunc())
   //create function that will be used to change the values of the dices id the isHeld is false
@@ -18,6 +19,9 @@ function App() {
   //Because we use .map this function will be applied to each of the elements of the array individually
   //and each element is an object, therefore we need to open it up and then overwirte the value of it
   const changeValuesFunc = element=> !element.isHeld ? { ...element, value: rollDiceFunc()} : element;
+
+  //this function updates the color or the dice we clicked by checking the id.
+  const holdDice = id => setDice(prevDice=>prevDice.map(elemnt=>elemnt.id===id? {...elemnt, isHeld: !elemnt.isHeld} : elemnt));
 
   return (
     <main className="App">
