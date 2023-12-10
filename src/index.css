@@ -25,8 +25,9 @@ main{
   width: 95vw;
   border-radius: 9px;
   display: flex;
+  flex-direction: column;
   padding: 30px;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: columns;
 }
@@ -43,7 +44,7 @@ main{
 #dice{
   height:50px;
   width: 50px;
-  box-shadow: 3px 2px 2px gray;
+  box-shadow: 3px 2px 2px rgb(119, 34, 34);
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -61,4 +62,16 @@ main{
 #dice-num{
   margin:0;
   font-size: 40px;
+}
+
+/* add style to the button that roles the dice */
+.rolldice_button{
+  color: rgb(26, 154, 171);
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 5px 5px 0px rgb(127, 22, 22) ;
+  height: 60px;
+  width: 80%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2rem;
 }

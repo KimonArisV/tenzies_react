@@ -16,7 +16,7 @@ function App() {
       <div  className='dices-container'>
         {diceArraysTags}
       </div>
-      <button onClick={()=>setDice(prevDice => prevDice.map(rollDiceFunc))}>Roll</button>
+      <button className="rolldice_button" onClick={()=>setDice(prevDice => prevDice.map(rollDiceFunc))}>Roll</button>
     </main>
   );
 }
