@@ -1,3 +1,6 @@
+# Tenzies game:
+Experience a hands-on approach to honing your React skills with this project. Dive into the world of React hooks, including useState and useEffect, while mastering the art of utilizing essential array functions like .map and .filter. Throughout the development journey, embrace the opportunity to abstract code and pass functions as parameters to custom components, dynamically shaping the state of each die through different game scenarios. Immerse yourself in the world of grid display and Flexbox for effective layout design. Along the way, navigate through numerous ternary conditions and harness the power of anonymous functions. This project serves as a testament to the practical application of these concepts, offering a comprehensive learning experience for React enthusiasts.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
