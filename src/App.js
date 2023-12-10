@@ -1,9 +1,20 @@
-
+import Die from "./assets/components/Die";
 
 function App() {
   return (
     <main className="App">
-      hello world!!
+      <dic  class='dices-container'>
+      <Die value={1} />
+      <Die value={1} />
+      <Die value={1} />
+      <Die value={1} />
+      <Die value={1} />
+      <Die value={1} />
+      <Die value={1} />
+      <Die value={1} />
+      <Die value={1} />
+      <Die value={1} />
+      </dic>
     </main>
   );
 }

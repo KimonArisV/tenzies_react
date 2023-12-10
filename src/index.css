@@ -24,4 +24,33 @@ main{
   height: 90vh;
   width: 95vw;
   border-radius: 9px;
+  display: flex;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: columns;
+}
+
+/* make the dies look like dies */
+.dices-container{
+  align-self: center;
+  display: grid;
+  /* row1 row2 .../ column1 column2 ... */
+  grid-template: auto auto / repeat(5, 1fr);
+  gap:17px;
+}
+
+#dice{
+  height:50px;
+  width: 50px;
+  box-shadow: 3px 2px 2px gray;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dice-num{
+  margin:0;
+  font-size: 40px;
 }
