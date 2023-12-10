@@ -82,3 +82,12 @@ main{
 .rolldice_button:hover{
   transform: scale(1.2);
 }
+
+/* add title and paragraph styles */
+.title{
+  color: green;
+}
+p{
+  width: 60%;
+  height: auto;
+}
