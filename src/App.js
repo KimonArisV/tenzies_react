@@ -12,6 +12,7 @@ function App() {
   
   //we will create a state to keep track if the use won or not:
   const [tenzies, setTenzies]=React.useState(false);
+
   //we only wanted to run if we update our array of dices somehow 
   React.useEffect(()=>{
     const newArrayTrueisHeld = dice.filter(element=>element.isHeld);
@@ -30,7 +31,20 @@ function App() {
   //used ternary to return in a single line. 
   //Because we use .map this function will be applied to each of the elements of the array individually
   //and each element is an object, therefore we need to open it up and then overwirte the value of it
-  const changeValuesFunc = element=> !element.isHeld ? { ...element, value: rollDiceFunc()} : element;
+  const changeValuesFunc = element=>  { 
+    if(!tenzies){
+    const my_repsonse = !element.isHeld ? { ...element, value: rollDiceFunc()} : element;
+    return (
+      my_repsonse
+      );
+    }else{
+      setTenzies(false);
+      //the ...element is not really needed here since we overwrite everything
+      const my_repsonse = { ...element, value: rollDiceFunc(),isHeld : false, id : nanoid()} ;
+      return my_repsonse ;
+     };
+
+  }
 
   //this function updates the color or the dice we clicked by checking the id.
   const holdDice = id => setDice(prevDice=>prevDice.map(elemnt=>elemnt.id===id? {...elemnt, isHeld: !elemnt.isHeld} : elemnt));
