@@ -51,9 +51,9 @@ main{
   align-items: center;
   cursor:pointer;
 }
-#dice:focus{
+/* #dice:focus{
   outline:none;
-}
+} */
 /* make it so it looses the shadow box when clicked */
 #dice:active{
   box-shadow: inset 5px 5px 10px -3px rgba(0,0,0,0);
@@ -67,11 +67,18 @@ main{
 /* add style to the button that roles the dice */
 .rolldice_button{
   color: rgb(26, 154, 171);
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
   box-shadow: 5px 5px 0px rgb(127, 22, 22) ;
   height: 60px;
   width: 80%;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 2rem;
+}
+/* make it active when clicked by playing with shadaow*/
+.rolldice_button:active{
+    box-shadow: inset 5px 5px 10px -3px rgba(0,0,0,0);
+}
+.rolldice_button:hover{
+  transform: scale(1.2);
 }
