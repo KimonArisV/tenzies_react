@@ -6,11 +6,11 @@ import {nanoid} from "nanoid";
 function App() {
   const rollDiceFunc = ()=> Math.floor(6*Math.random());
   const initialDiceArray =Array.from({ length: 10 },rollDiceFunc);
-  const initialState = initialDiceArray.map(  element=>(  {value : element, isHeld : false, id : nanoid()} ) );
+  const initialState = initialDiceArray.map(  element=>(  {value : element, isHeld : true, id : nanoid()} ) );
   const [dice,setDice] = React.useState(initialState);
   
   //create the tags to render the dices
-  const diceArraysTags = dice.map(oneDice=><Die value={oneDice.value} key={oneDice.id} />);
+  const diceArraysTags = dice.map(oneDice=><Die value={oneDice.value} key={oneDice.id} isHeld={oneDice.isHeld} />);
 
   //console.log(rollDiceFunc())
   //create function that will be used to change the values of the dices id the isHeld is false
