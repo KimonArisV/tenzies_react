@@ -151,3 +151,6 @@ dist
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#custom 
+my_venv_tenzies_game 
